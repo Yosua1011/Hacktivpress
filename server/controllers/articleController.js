@@ -70,7 +70,8 @@ function editOne (req, res) {
   .then(editedArticle => {
     console.log('ini editedarticle ', editedArticle)
     console.log('ini headers ', req.headers)
-    if (editedArticle.author.username == req.headers.username) {
+    console.log('ini id ', req.id)
+    if (editedArticle.author == req.headers.id) {
       editedArticle.title = req.body.title || editedArticle.title
       editedArticle.content = req.body.content || editedArticle.content
       editedArticle.category = req.body.category || editedArticle.category

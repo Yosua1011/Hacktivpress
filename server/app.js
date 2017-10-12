@@ -12,7 +12,7 @@ var articles = require('./routes/articles');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/hacktivpress', (err) => {
+mongoose.connect('mongodb://localhost/hacktivpress2', (err) => {
   if (!err) {
     console.log('Database connected')
   } else {

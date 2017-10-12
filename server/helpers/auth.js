@@ -9,20 +9,21 @@ const isLogin = (req,res,next) => {
         if (err) {
             res.send(err)
         } else {
-            req.headers = decoded
-            next()
+          req.headers = decoded
+          next()
         }
     })
 }
 
 const isArticleCreatorAuth = (req,res,next) => {
     Article.find({
-      _id: req.params.articleid
+      _id: req.params.id
     })
     .then(article => {
-      console.log(article[0].author)
-      console.log(req.headers.id)
-      if (article[0].author == req.headers.username) {
+      console.log(article)
+      console.log('ini article[0].author', article[0].author)
+      console.log('ini req.headers.id', req.headers.id)
+      if (article[0].author == req.headers.id) {
         next()
       } else {
         res.send({message: 'Lu bukan yang bikin artikel'})
