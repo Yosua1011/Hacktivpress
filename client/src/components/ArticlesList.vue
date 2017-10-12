@@ -1,7 +1,8 @@
 <template>
   <div class="col-md-8">
     <article-summary></article-summary>
-
+    <!-- <article-summary v-if="allarticlestate === true"></article-summary>
+    <article-author v-if="allarticlestate === false"></article-author> -->
   </div>
 </template>
 
@@ -21,8 +22,7 @@ export default {
       'getAllArticles'
     ]),
     ...mapState([
-      'allarticlestate',
-      'articlebyauthor'
+      'allarticlestate'
     ])
   },
   created () {

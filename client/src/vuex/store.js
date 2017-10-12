@@ -16,8 +16,7 @@ const state = {
   user: '',
   head: null,
   author: '',
-  allarticlestate: true,
-  articlebyauthor: false
+  allarticlestate: true
 }
 
 const mutations = {
@@ -39,7 +38,6 @@ const mutations = {
   articleByAuthor (state, payload) {
     state.articlesByAuthorData = payload
     state.allarticlestate = false
-    state.articlebyauthor = true
   }
 }
 

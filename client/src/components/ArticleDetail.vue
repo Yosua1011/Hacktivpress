@@ -16,11 +16,11 @@
                   </div>
                   <form class="">
                   <div class="modal-body">
-                      <label for="title">Title</label>
-                      <input type="text" placeholder="title" v-model="editData.title" style="color: black">
-                      <label for="question">Content</label>
-                      <input type="text" placeholder="question" v-model="editData.content  " style="color: black">
-                      <label for="question">Category</label>
+                      <label for="title" style="color: black">Title</label>
+                      <input type="text" placeholder="title" v-model="editData.title" style="color: black"><br />
+                      <label for="question" style="color: black">Content</label>
+                      <textarea type="text" placeholder="question" v-model="editData.content  " style="color: black"></textarea><br />
+                      <label for="question" style="color: black">Category</label>
                       <input type="text" placeholder="question" v-model="editData.category  " style="color: black">
                   </div>
                   <div class="modal-footer">
