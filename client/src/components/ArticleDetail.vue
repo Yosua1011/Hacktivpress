@@ -95,17 +95,13 @@ export default {
       }
     },
     checkButton () {
-      if (this.detail.author === localStorage.getItem('username')) {
+      if (this.detail.author.username === localStorage.getItem('username')) {
         // console.log(`button state true`)
         this.buttonstate = true
       } else {
         // console.log(`button state false`)
         this.buttonstate = false
       }
-    },
-    showAlert (msg) {
-      if (msg !== null) this.$swal(`${msg}`)
-      // Use sweetalret2
     },
     masukinData (input) {
       // console.log(input)

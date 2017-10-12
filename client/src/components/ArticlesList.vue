@@ -1,21 +1,28 @@
 <template>
   <div class="col-md-8">
-    <article-summary/>
+    <article-summary></article-summary>
+
   </div>
 </template>
 
 <script>
 import ArticleSummary from '@/components/ArticleSummary'
-import { mapActions } from 'vuex'
+import ArticleAuthor from '@/components/ArticleAuthor'
+import { mapActions, mapState } from 'vuex'
 // import NewQuestion from '@/components/NewQuestion'
 export default {
   components: {
     // NewQuestion,
-    ArticleSummary
+    ArticleSummary,
+    ArticleAuthor
   },
   methods: {
     ...mapActions([
       'getAllArticles'
+    ]),
+    ...mapState([
+      'allarticlestate',
+      'articlebyauthor'
     ])
   },
   created () {

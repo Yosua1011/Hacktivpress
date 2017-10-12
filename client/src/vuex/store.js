@@ -11,9 +11,13 @@ Vue.use(Vuex)
 
 const state = {
   articlesdata: [],
+  articlesByAuthorData: [],
   loginstate: false,
   user: '',
-  head: null
+  head: null,
+  author: '',
+  allarticlestate: true,
+  articlebyauthor: false
 }
 
 const mutations = {
@@ -31,6 +35,11 @@ const mutations = {
   },
   setUser (state, payload) {
     state.user = payload
+  },
+  articleByAuthor (state, payload) {
+    state.articlesByAuthorData = payload
+    state.allarticlestate = false
+    state.articlebyauthor = true
   }
 }
 
@@ -40,6 +49,14 @@ const actions = {
     .then(({data}) => {
       console.log('all articles ', data)
       commit('allContent', data)
+    })
+    .catch(err => console.log(err))
+  },
+  getArticlesByAuthor ({commit}) {
+    http.get(`/articles/${state.author}`)
+    .then(({data}) => {
+      console.log('all articles ', data)
+      commit('articleByAuthor', data)
     })
     .catch(err => console.log(err))
   },
@@ -98,8 +115,13 @@ const actions = {
     })
     .then(({data}) => {
       console.log('Sukses keedit')
+      this.showAlert('Selamat anda sudah berhasil mengedit')
     })
     .catch(err => console.log(err))
+  },
+  showAlert (msg) {
+    // Use sweetalret2
+    this.$swal(`${msg}`)
   }
 }
 
