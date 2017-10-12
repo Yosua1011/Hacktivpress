@@ -5,7 +5,8 @@ const articleSchema = new Schema({
   slug: {type: String},
   title: {type: String, required: true},
   content: {type: String, required: true},
-  author: String
+  category: {type: String, required: true},
+  author: {type: Schema.Types.ObjectId, ref: "User"}
 }, {
   timestamps: true
 })
