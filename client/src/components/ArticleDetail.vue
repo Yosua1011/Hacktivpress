@@ -61,8 +61,7 @@ export default {
       detail: '',
       editData: {id: null, title: '', content: '', category: ''},
       loginstate: false,
-      buttonstate: false,
-      username: localStorage.getItem('username')
+      buttonstate: false
     }
   },
   methods: {
@@ -76,7 +75,6 @@ export default {
       // console.log(slug)
       this.$http.get(`/articles/slug/${slug}`)
       .then(({data}) => {
-        console.log(data[0].id)
         this.detail = data[0]
         this.checkButton()
         this.checkLogin()
@@ -84,8 +82,8 @@ export default {
       .catch(err => console.log(err))
     },
     checkLogin () {
-      console.log('detail.author.username = ' + this.detail.author.username)
-      console.log('user.username = ' + localStorage.getItem('username'))
+      // console.log('detail.author.username = ' + this.detail.author.username)
+      // console.log('user.username = ' + localStorage.getItem('username'))
       if (localStorage.getItem('token') === null) {
         // console.log(`login state false`)
         this.loginstate = false

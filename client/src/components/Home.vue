@@ -68,10 +68,8 @@ export default {
       console.log('check login')
       if (localStorage.getItem('token') === null) {
         this.loginstate = false
-        this.head = null
       } else {
         this.loginstate = true
-        this.head = localStorage.getItem('username')
       }
     },
     showAlert (msg) {
