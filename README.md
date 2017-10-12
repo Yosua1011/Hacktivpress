@@ -29,20 +29,21 @@ Server -> Backend - Server API
 Path | Information
 --- | ---
 / | Main Page : open access for everyone w/o login/signup
-/read/:slug | Details of specific article
-/category/:cater | Specific list of articles based on specific category
-/author/:author | Specific list of articles based on specific author
+/:slug | Details of specific article
+/newArticle | Create new article
+/login | Login and Register page
 
 #### Struktur Backend
 Path | Keterangan
 --- | ---
-/ | Main Page : open access for everyone w/o login/signup
-/read/:slug | Details of specific article
-/category/:cater | Specific list of articles based on specific category
-/author/:author | Specific list of articles based on specific author
-/login | Login and Register page
-/post | New Article Submit Page
-/:articleId | Edit Specific Article Page
+/articles | Main Page : open access for everyone w/o login/signup and alos Post New Article
+/articles/slug/:slug | Details of specific article
+/articles/cat/:category | Specific list of articles based on specific category
+/articles/:author | Specific list of articles based on specific author
+/articles/:id | Edit and Delete Specific Article Page
+/signin | Login page
+/signup | Sign Up page
+
 
 #### Installing at local
 git clone https://github.com/Yosua1011/Hacktivpress.git
