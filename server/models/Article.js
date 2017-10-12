@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const articleSchema = new Schema({
   slug: {type: String},
   title: {type: String, required: true},
-  article: {type: String, required: true},
+  content: {type: String, required: true},
   author: String
 }, {
   timestamps: true
